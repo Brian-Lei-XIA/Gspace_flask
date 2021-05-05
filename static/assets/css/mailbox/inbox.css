@@ -1,0 +1,85 @@
+.inbox .cardbg > .title-inner {margin: -1rem -2rem 0rem;border-bottom: 1px solid #DDD;padding: 0 1.5rem 1rem;}
+.nav-item {border-bottom: 1px solid #dedede;}
+.inbox .box-body.no-padding {margin: 0 -2rem;}
+.badge-primary, .badge-warning {padding: 0 0.3rem;}
+.mailbox-controls {padding: 1rem;}
+
+.icheckbox_flat-blue,
+.iradio_flat-blue {
+    display: inline-block;
+    *display: inline;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    background: url(../../images/blue.png) no-repeat;
+    border: none;
+    cursor: pointer;
+}
+
+.icheckbox_flat-blue {
+    background-position: 0 0;
+}
+    .icheckbox_flat-blue.checked {
+        background-position: -22px 0;
+    }
+    .icheckbox_flat-blue.disabled {
+        background-position: -44px 0;
+        cursor: default;
+    }
+    .icheckbox_flat-blue.checked.disabled {
+        background-position: -66px 0;
+    }
+
+.iradio_flat-blue {
+    background-position: -88px 0;
+}
+    .iradio_flat-blue.checked {
+        background-position: -110px 0;
+    }
+    .iradio_flat-blue.disabled {
+        background-position: -132px 0;
+        cursor: default;
+    }
+    .iradio_flat-blue.checked.disabled {
+        background-position: -154px 0;
+    }
+
+/* Retina support */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (-moz-min-device-pixel-ratio: 1.5),
+       only screen and (-o-min-device-pixel-ratio: 3/2),
+       only screen and (min-device-pixel-ratio: 1.5) {
+    .icheckbox_flat-blue,
+    .iradio_flat-blue {
+        background-image: url(../images/blue@2x.png);
+        -webkit-background-size: 176px 22px;
+        background-size: 176px 22px;
+    }
+}
+.has-feedback {
+	position: relative;
+}
+.form-control-feedback {
+	position: absolute;
+	top: 7px;
+	right: 0;
+	z-index: 2;
+	display: block;
+	width: 34px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+	pointer-events: none;
+}
+.inbox .cardbg > .heading {
+	margin: -1rem -2rem 0rem;
+	border-bottom: 1px solid #DDD;
+	padding: 0 1.5rem 1rem;
+}
+.inbox .cardbg > .heading .title-inner {display:inline;}
+.box-footer.no-padding {margin: 0 -1rem;}
+.box-footer.no-padding .mailbox-controls{padding:0;}
+.table td, .table th {padding: 0.75rem 1.25rem;}
+.btn-sm.checkbox-toggle {width: 30px;height: 32px;}

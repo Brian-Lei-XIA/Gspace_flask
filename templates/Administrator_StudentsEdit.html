@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Student Edit</title>
+	<meta name="keywords" content="Gspace" />
+	<meta name="description" content="Online Teaching">
+	<meta name="author" content="Gspace team">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Google Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<!-- Bootstrap CSS CDN -->
+	<link rel="stylesheet" href="http://cdn.bootstrapmb.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<!-- Custom CSS Starts -->
+	<link rel="stylesheet" href="static/assets/css/skin/all-skins.css">
+	<link rel="stylesheet" href="static/assets/css/general/style.css">
+	<link rel="stylesheet" href="static/assets/css/sidebar/side-nav.css">
+	<link rel="stylesheet" href="static/assets/css/fonts/fonts-style.css">
+	<link rel="stylesheet" href="static/assets/css/nanoscroller/nanoscroller.css">
+
+	<link rel="stylesheet" href="static/assets/css/tables/datatables.min.css">
+	<link rel="stylesheet" href="static/assets/css/tables/buttons.dataTables.min.css">
+
+	<link rel="stylesheet" href="static/assets/css/elements/modals.css">
+	<!-- Page CSS -->
+	<link rel="stylesheet" href="static/assets/css/dashboard/dashboard2.css">
+	<link rel="stylesheet" href="static/assets/css/flag/flagicon.css">
+	<link rel="stylesheet" href="static/assets/css/maps/jqvmap.css">
+
+	<link rel="stylesheet" href="static/assets/css/skin/all-skins.css">
+	<link rel="stylesheet" href="static/assets/css/general/style.css">
+	<link rel="stylesheet" href="static/assets/css/sidebar/side-nav.css">
+	<link rel="stylesheet" href="static/assets/css/fonts/fonts-style.css">
+	<link rel="stylesheet" href="static/assets/css/nanoscroller/nanoscroller.css">
+
+</head>
+
+<body class="sidebar-mini fixed skin-purple">
+	<div class="wrapper">
+    <header class="main-header">
+      <!-- Logo -->
+      <a href="{{url_for('admin_homepage', _external=True)}}" class="logo">
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Gspace</b></span>
+      </a>
+      <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+		<div class="pull-right">
+			<a href="{{url_for('logout', _external=True)}}" class="btn btn-primary btn-sm">Sign out</a>
+			<a>&nbsp;</a>
+		</div>
+      </nav>
+    </header>
+		<!-- Sidebar Section Starts -->
+		<aside class="main-sidebar">
+			<div class="nano">
+				<div class="nano-content">
+					<ul class="sidebar-menu" data-widget="tree">
+						<li class="header">
+							<h5>Welcome to Gspace!</h5>
+						</li>
+						<li>
+							<a href="Administrator_Homepage">
+								<i class="fa fa-dashboard"></i> <span>Home</span>
+							</a>
+
+						</li>
+						<li>
+							<a href="Administrator_Coursespage">
+								<i class="fa fa-leanpub"></i> <span>Course</span>
+							</a>
+						</li>
+						<li class="treeview">
+							<a href="#">
+								<i class="fa fa-navicon"></i>
+								<span>Users</span>
+								<span class="pull-right-container">
+									<i class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+								<li>
+									<a href="Administrator_TeachersEdit">
+										<i class="fa fa-desktop"></i> <span>Teachers Infor</span>
+									</a>
+								</li>
+								<li class="active">
+									<a href="Administrator_StudentsEdit">
+										<i class="fa fa-bar-chart-o"></i> <span>Students Infor</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</aside>
+		<!-- Sidebar Section Ends -->
+
+		<!-- Page Content Starts-->
+		<div class="content-wrapper">
+			<section class="content-header">
+				<div class="alert alert-secondary col-xl-12 col-lg-12 col-sm-12 col-md-12" role="alert">
+					<p class="mb-0">
+						<a href="Administrator_Homepage">Home</a>
+						/ Students_information
+					</p>
+				</div>
+			</section>
+			<h1>Students Infor</h1>
+			</section>
+			<section>
+				<div class="card panel panel-default">
+					<div class="card-header" id="headingOne">
+						<div class="panel-heading">
+							<h6 class="title-inner text-uppercase">Student</h6>
+						</div>
+					</div>
+					<div id="collapseOne" class="collapse show p-4" aria-labelledby="headingOne" data-parent="#accordion">
+						<table id="example" class="table table-striped table-bordered dt-responsive nowrap" style="text-align:center">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Name</th>
+									<th>Gender</th>
+									<th>Age</th>
+									<th>Level</th>
+									<th>Telephone</th>
+									<th>Email</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								{%for item in message%}
+								<tr>
+									<td>{{item[0]}}</td>
+									<td>{{item[1]}}</td>
+									<td>{{item[2]}}</td>
+									<td>{{item[3]}}</td>
+									<td>{{item[4]}}</td>
+									<td>{{item[5]}}</td>
+									<td>{{item[6]}}</td>
+									<td>
+										<a href="{{ url_for('admin_edit_student', id=item[0]) }}" class="btn btn-primary btn-sm" >Edit</a>
+<!--										<div id="costumModal" class="modal" data-easein="expandIn"  tabindex="-1" role="dialog" aria-labelledby="costumModalLabel" aria-hidden="true">-->
+<!--											<div class="modal-dialog">-->
+<!--												<div class="modal-content">-->
+<!--													<div class="modal-header">-->
+<!--														<h5 class="modal-title">{{item[1]}}</h5>-->
+<!--														<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
+<!--													</div>-->
+<!--													<div class="modal-body">-->
+<!--														<form accept-charset="UTF-8"  class="form-control-hori" role="form" action="http://localhost:5000/Student_UserEditpage" method="post">-->
+<!--															<div class="form-group row">-->
+<!--																<label for="inputName" class="col-sm-2 form-control-label">Name</label>-->
+<!--																<div class="col-sm-10">-->
+<!--																	<input type="text" class="form-control" name="name" value="{{item[1]}}">-->
+<!--																</div>-->
+<!--															</div>-->
+<!--															<div class="form-group row">-->
+<!--																<label for="inputEmail" class="col-sm-2 form-control-label">Gender</label>-->
+<!--																<div class="col-sm-10">-->
+<!--																	<select class="form-control" name="gender">-->
+<!--																		<option  value="{{'M' if item[2]=='M' else 'F'}}">{{'Male' if item[2]=='M' else 'Female'}}</option>-->
+<!--																		<option  value="{{'F' if item[2]=='M' else 'M'}}">{{'Female' if item[2]=='M' else 'Male'}}</option>-->
+<!--																	</select>-->
+<!--																</div>-->
+<!--															</div>-->
+<!--															<div class="form-group row">-->
+<!--																<label for="inputEmail" class="col-sm-2 form-control-label">Age</label>-->
+<!--																<div class="col-sm-10">-->
+<!--																	<input type="number" class="form-control" min="1" max="100" step="1" name = "age"value="{{item[3]}}">-->
+<!--																</div>-->
+<!--															</div>-->
+<!--															<div class="form-group row">-->
+<!--																<label for="inputExperience" class="col-sm-2 form-control-label">Level</label>-->
+<!--																<div class="col-sm-10">-->
+<!--																	<input type="number" class="form-control" min="0" max="7" step="1" name = "level"value="{{item[4]}}" >-->
+<!--																</div>-->
+<!--															</div>-->
+<!--															<div class="form-group row">-->
+<!--																<label for="inputSkills" class="col-sm-2 form-control-label">Telephone</label>-->
+<!--																<div class="col-sm-10">-->
+<!--																	<input type="text" class="form-control" id="inputSkills" name = "phoneNum"value="{{item[5]}}">-->
+<!--																</div>-->
+<!--															</div>-->
+<!--															<div class="form-group row">-->
+<!--																<label for="inputSkills" class="col-sm-2 form-control-label">Email</label>-->
+<!--																<div class="col-sm-10">-->
+<!--																	<input type="email" class="form-control" name="email" value="{{item[6]}}">-->
+<!--																</div>-->
+<!--															</div>-->
+<!--															<div class="form-group row"></div>-->
+<!--															<div class="offset-sm-2 col-sm-10">-->
+<!--																<button class="btn btn-secondary pull-left" data-dismiss="modal" aria-hidden="true">Close</button>-->
+<!--																<input class="btn btn-success pull-right" type="submit" value="Save">-->
+<!--															</div>-->
+<!--														</form>-->
+<!--													</div>-->
+<!--												</div>-->
+<!--											</div>-->
+<!--										</div>-->
+										<a href ="{{ url_for('admin_delete_student', id=item[0]) }}"  class="btn btn-danger btn-sm" onclick="{if(confirm('The {{item[1]}} will be deleted. Are you sure?')){this.document.formname.submit();return true;}return false;}">Delete</a>
+									</td>
+								</tr>
+								{%endfor%}
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<a class="btn btn-primary" href="Administrator_Homepage" role="button">Cancel</a>
+
+			</section>
+
+		</div>
+
+		<!-- Page Content Ends -->
+
+		<!-- Footer Section Starts -->
+		<footer class="main-footer">
+			<div class="pull-right hidden-xs">
+				Version 1.0.0
+			</div>
+			<p class="mb-0">Online learning system © 2020 Gspace.Team all rights
+				reserved.</p>
+		</footer>
+		<!-- Footer Section Ends -->
+
+	</div>
+
+	<!-- jQuery CDN - Slim version (=without AJAX) -->
+	<script src="static/assets/js/jquery/slim.min.js"></script>
+	<!-- Popper.JS -->
+	<script src="static/assets/js/jquery/popper.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="http://cdn.bootstrapmb.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<script src="static/assets/js/jquery/jquery.min.js"></script>
+	<!-- Page JS -->
+	<script src="static/assets/js/maps/jvector/jquery.vmap.min.js"></script>
+	<script src="static/assets/js/maps/jvector/jquery.vmap.world.js"></script>
+	<script src="static/assets/js/maps/jvector/jquery.vmap.sampledata.js"></script>
+	<script src="static/assets/js/charts/Chart.bundle.min.js"></script>
+	<script src="static/assets/js/charts/utils.js"></script>
+	<script src="static/assets/js/dashboard/dashboard2.js"></script>
+
+	<script src="static/assets/js/tables/dataTables.buttons.min.js"></script>
+	<script src="static/assets/js/tables/datatables.min.js"></script>
+	<script src="static/assets/js/tables/dataTables.buttons.min.js"></script>
+	<script src="static/assets/js/tables/jszip.min.js"></script>
+	<script src="static/assets/js/tables/pdfmake.min.js"></script>
+	<script src="static/assets/js/tables/vfs_fonts.js"></script>
+	<script src="static/assets/js/tables/buttons.html5.min.js"></script>
+	<script src="static/assets/js/tables/buttons.print.min.js"></script>
+	<script src="static/assets/js/tables/datatable.js"></script>
+
+	<script src="static/assets/js/elements/modals/velocity.min.js"></script>
+	<script src="static/assets/js/elements/modals/velocity.ui.min.js"></script>
+	<!-- Theme JS -->
+	<script src="static/assets/js/nanoscroller/nanoscroller.js"></script>
+	<script src="static/assets/js/custom/theme.js"></script>
+	<script type="text/javascript">
+	$(".modal").each(function(l){$(this).on("show.bs.modal",function(l){var o=$(this).attr("data-easein");"shake"==o?$(".modal-dialog").velocity("callout."+o):"pulse"==o?$(".modal-dialog").velocity("callout."+o):"tada"==o?$(".modal-dialog").velocity("callout."+o):"flash"==o?$(".modal-dialog").velocity("callout."+o):"bounce"==o?$(".modal-dialog").velocity("callout."+o):"swing"==o?$(".modal-dialog").velocity("callout."+o):$(".modal-dialog").velocity("transition."+o)})});
+	</script>
+</body>
+
+</html>

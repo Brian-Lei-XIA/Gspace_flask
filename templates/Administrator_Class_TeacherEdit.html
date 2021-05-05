@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Class Teacher Edit</title>
+	<meta name="keywords" content="Gspace" />
+	<meta name="description" content="Online Teaching">
+	<meta name="author" content="Gspace team">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Google Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<!-- Bootstrap CSS CDN -->
+	<link rel="stylesheet" href="http://cdn.bootstrapmb.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <!-- Custom CSS Starts -->
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/skin/all-skins.css', _external=True)}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/general/style.css', _external=True)}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/sidebar/side-nav.css', _external=True)}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/fonts/fonts-style.css', _external=True)}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/nanoscroller/nanoscroller.css', _external=True)}}">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/tables/datatables.min.css', _external=True)}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/tables/buttons.dataTables.min.css', _external=True)}}">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/dashboard/dashboard2.css', _external=True)}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/flag/flagicon.css', _external=True)}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/maps/jqvmap.css', _external=True)}}">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/skin/all-skins.css', _external=True)}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/general/style.css', _external=True)}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/sidebar/side-nav.css', _external=True)}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/fonts/fonts-style.css', _external=True)}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/nanoscroller/nanoscroller.css', _external=True)}}">
+</head>
+
+<body class="sidebar-mini fixed skin-purple">
+  <div class="wrapper">
+    <!-- Header Section Starts -->
+    <header class="main-header">
+      <!-- Logo -->
+      <a href="{{url_for('admin_homepage', _external=True)}}" class="logo">
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Gspace</b></span>
+      </a>
+      <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+		<div class="pull-right">
+			<a href="{{url_for('logout', _external=True)}}" class="btn btn-primary btn-sm">Sign out</a>
+			<a>&nbsp;</a>
+		</div>
+      </nav>
+    </header>
+
+   <!-- Sidebar Section Starts -->
+		<aside class="main-sidebar">
+			<div class="nano">
+				<div class="nano-content">
+					<ul class="sidebar-menu" data-widget="tree">
+						<li class="header">
+							<h5>Welcome to Gspace!</h5>
+						</li>
+						<li>
+							<a href="{{url_for('admin_homepage', _external=True)}}">
+								<i class="fa fa-dashboard"></i> <span>Home</span>
+							</a>
+
+						</li>
+						<li>
+							<a href="{{url_for('admin_coursespage', _external=True)}}">
+								<i class="fa fa-leanpub"></i> <span>Course</span>
+							</a>
+						</li>
+						<li class="treeview">
+							<a href="#">
+								<i class="fa fa-navicon"></i>
+								<span>Users</span>
+								<span class="pull-right-container">
+									<i class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+								<li>
+									<a href="{{url_for('admin_teachersEdit', _external=True)}}">
+										<i class="fa fa-desktop"></i> <span>Teachers Infor</span>
+									</a>
+								</li>
+								<li class="active">
+									<a href="{{url_for('admin_studentsEdit', _external=True)}}">
+										<i class="fa fa-bar-chart-o"></i> <span>Students Infor</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</aside>
+		<!-- Sidebar Section Ends -->
+
+    <!-- Page Content Starts -->
+    <div class="content-wrapper">
+      <section class="content-header">
+        <div class="alert alert-secondary col-xl-12 col-lg-12 col-sm-12" role="alert">
+          <p class="mb-0">
+            <a href="{{url_for('admin_homepage', _external=True)}}">Home</a> / User-imfomation</p>
+        </div>
+        <section class="content">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="nav-tabs-custom cardbg">
+                        <h1>Edit</h1>
+                        <hr>
+                        <div class="tab-pane" id="settings">
+                            <form accept-charset="UTF-8"  class="form-control-hori" role="form" action="{{url_for('Save_ClassTeacherEdit', className=className, id=id)}}" method="post">
+                                <div class="form-group row">
+                                    <label for="inputName" class="col-sm-2 form-control-label">Name</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" name="name" value="{{name}}">
+                                        <input type="hidden" class="form-control" name="id" value="{{id}}">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail" class="col-sm-2 form-control-label">Gender</label>
+                                    <div class="col-sm-10">
+                                        <select class="form-control" name="gender">
+                                            <option  value="{{'M' if gender=='M' else 'F'}}">{{'Male' if gender=='M' else 'Female'}}</option>
+                                            <option  value="{{'F' if gender=='M' else 'M'}}">{{'Female' if gender=='M' else 'Male'}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputEmail" class="col-sm-2 form-control-label">Age</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" min="1" max="100" step="1" name = "age" value="{{age}}">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputExperience" class="col-sm-2 form-control-label">Level</label>
+                                    <div class="col-sm-10">
+                                        <input type="number" class="form-control" min="0" max="7" step="1" name = "level" value="{{level}}" >
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputSkills" class="col-sm-2 form-control-label">Telephone</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="inputSkills" name = "phoneNum" value="{{phoneNum}}">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="inputSkills" class="col-sm-2 form-control-label">Email</label>
+                                    <div class="col-sm-10">
+                                        <input type="email" class="form-control" name="email" value="{{email}}">
+                                    </div>
+                                </div>
+                                <div class="form-group row"></div>
+                                <div class="offset-sm-2 col-sm-10">
+                                  <a role="button" href="{{url_for('administrator_classe_Java1001', className=className)}}"  class="btn btn-danger pull-left">Cancel</a><a>&nbsp;</a>
+                                  <input class="btn btn-success pull-right" type="submit" value="Save">
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.tab-pane -->
+                    </div>
+                    <!-- /.tab-content -->
+                </div>
+                <!-- /.nav-tabs-custom -->
+            </div>
+            <!-- row -->
+		<!-- /.col -->
+		</section>
+    </div>
+
+
+
+
+    <!-- Page Content Ends -->
+
+
+    <!-- Back to Top Starts -->
+    <a href="javascript:" id="return-to-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+    <!-- Back to Top Ends -->
+    <!-- Footer Section Starts -->
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        Version 1.0.0
+      </div>
+      <p class="mb-0">Online learning system © 2020 Gspace.Team all rights
+        reserved.</p>
+    </footer>
+    <!-- Footer Section Ends -->
+
+  </div>
+
+	<!-- jQuery CDN - Slim version (=without AJAX) -->
+	<script src="{{url_for('static', filename='assets/js/jquery/slim.min.js', _external=True)}}"></script>
+	<!-- Popper.JS -->
+	<script src="{{url_for('static', filename='assets/js/jquery/popper.min.js', _external=True)}}"></script>
+	<!-- Bootstrap JS -->
+	<script src="http://cdn.bootstrapmb.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<script src="{{url_for('static', filename='assets/js/jquery/jquery.min.js', _external=True)}}"></script>
+	<!-- Page JS -->
+	<script src="{{url_for('static', filename='assets/js/maps/jvector/jquery.vmap.min.js', _external=True)}}"></script>
+	<script src="{{url_for('static', filename='assets/js/maps/jvector/jquery.vmap.world.js', _external=True)}}"></script>
+	<script src="{{url_for('static', filename='assets/js/maps/jvector/jquery.vmap.sampledata.js', _external=True)}}"></script>
+	<script src="{{url_for('static', filename='assets/js/charts/Chart.bundle.min.js', _external=True)}}"></script>
+	<script src="{{url_for('static', filename='assets/js/charts/utils.js', _external=True)}}"></script>
+  <script src="{{url_for('static', filename='assets/js/dashboard/dashboard2.js', _external=True)}}"></script>
+
+  <script src="{{url_for('static', filename='assets/js/tables/dataTables.buttons.min.js', _external=True)}}"></script>
+  <script src="{{url_for('static', filename='assets/js/tables/datatables.min.js', _external=True)}}"></script>
+  <script src="{{url_for('static', filename='assets/js/tables/dataTables.buttons.min.js', _external=True)}}"></script>
+  <script src="{{url_for('static', filename='assets/js/tables/jszip.min.js', _external=True)}}"></script>
+  <script src="{{url_for('static', filename='assets/js/tables/pdfmake.min.js', _external=True)}}"></script>
+  <script src="{{url_for('static', filename='assets/js/tables/vfs_fonts.js', _external=True)}}"></script>
+  <script src="{{url_for('static', filename='assets/js/tables/buttons.html5.min.js', _external=True)}}"></script>
+  <script src="{{url_for('static', filename='assets/js/tables/buttons.print.min.js', _external=True)}}"></script>
+  <script src="{{url_for('static', filename='assets/js/tables/datatable.js', _external=True)}}"></script>
+	<!-- Theme JS -->
+	<script src="{{url_for('static', filename='assets/js/nanoscroller/nanoscroller.js', _external=True)}}"></script>
+	<script src="{{url_for('static', filename='assets/js/custom/theme.js', _external=True)}}"></script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+.tag {
+	display: inline;
+	padding: .2em .6em .3em;
+	font-size: 75%;
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: .25em;
+}
+.profile-user-img {
+	margin: 0 auto;
+	width: 100px;
+	padding: 3px;
+	border: 3px solid #d2d6de;
+	display: table;
+	float: none;
+}
+.nav-tabs-custom > .tab-content {
+	background: #fff;
+	padding: 2rem 0 0;
+}
+.profile-username {
+	font-size: 21px;
+	margin-top: 5px;
+}
+.user-block .description {
+	color: #999;
+	font-size: 13px;
+}
+.user-block img {
+	width: 40px;
+	height: 40px;
+	float: left;
+}
+.user-block .username, .user-block .description, .user-block .comment {
+	display: block;
+	margin-left: 50px;
+}
+.user-block .username {
+	font-size: 16px;
+	font-weight: 600;
+}
+.btn-box-tool {
+	padding: 5px;
+	font-size: 12px;
+	background: transparent;
+	color: #97a0b3;
+}
+.list-inline > li {
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+.post {
+	border-bottom: 1px solid #d2d6de;
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	color: #666;
+}
+.post .user-block {
+	margin-bottom: 1rem;
+	color: #666;
+}
+.cardbg p {
+	line-height:normal;
+	font-size:0.9rem;
+}
+.form-control-label {
+	padding-top: 7px;
+	margin-bottom: 0;
+	text-align: right;
+}
+.nav-tabs-custom > .nav-tabs > li > a {
+	border: 2px solid transparent;
+	margin-bottom: -2px;
+	margin-right: 5px;
+	border-bottom:none;
+}
+.nav-tabs-custom > .nav-tabs > li > a.active, .nav-tabs-custom > .nav-tabs > li > a.active:hover {
+	background-color: #fff;
+	color: #444;
+}
+.nav-tabs-custom > .nav-tabs > li > a {
+	color: #444;
+	border-radius: 0;
+	position: relative;
+	display: block;
+	padding: 10px 15px;
+}
+.nav-tabs-custom > .nav-tabs > li > a.active {
+	border-color:#237EE5;
+}
+.list-group > .list-group-item {
+	border-radius: 0px;
+}

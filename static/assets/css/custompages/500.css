@@ -1,0 +1,8 @@
+html,body {margin: auto;height:100%;display:table;}
+body {background:#F7F7F7;display:table-cell;vertical-align:middle;color:#333;}
+h1 {font-size:8.5rem;font-weight:bold;}
+.search-form {margin: 0 0 1.5rem;}
+.search-form .input-group {width: 50%;margin: 0 auto;}
+.search-form .form-control {border-radius: 0;}
+.text-red {color:#dc3545;}
+.headline {text-shadow:6px 3px #4b2727;}

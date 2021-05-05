@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Login page</title>
+  <meta name="keywords" content="Gspace" />
+  <meta name="description" content="Online Teaching">
+  <meta name="author" content="Gspace team">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="http://cdn.bootstrapmb.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="static/assets/css/custompages/login2.css">
+  <!-- Fonts CSS -->
+  <link rel="stylesheet" href="static/assets/css/fonts/fonts-style.css">
+</head>
+
+<body class="bg-login">
+  <div class="wrapper">
+    <!-- Page Content Starts-->
+    <div class="content-wrapper">
+      <div class="mx-auto login">
+        <div class="login_wrapper">
+          <div class="animate form login_form">
+            <section class="login_content">
+              <form accept-charset="UTF-8" role="form" id="login" action="#" method="post" enctype="multipart/form-data" class="form-horizontal form-label-left">
+                <h1>Login Form</h1>
+                {% import 'bootstrap/wtf.html' as wtf %}
+                {% block content %}
+                {{ wtf.quick_form(form, button_map={'submit_button': 'primary'}) }}
+                {% endblock %}
+                <div class="row">
+                  <div class="col">
+                    <!-- Message shows here -->
+                    <strong>{{ message }}</strong>
+                  </div>
+                </div>
+                <div>
+                  <p><a href="{{url_for('login', _external=True)}}">Back</a></p>
+                </div>
+                <hr />
+                <div class="separator">
+                  <div>
+                    <h1><i class="fa fa-paw"></i> Welcome to Gspace!</a></h1>
+                    <p>Online learning system © 2020 Gspace Team all right sreserved.</p>
+                  </div>
+                </div>
+              </form>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Page Content Ends-->
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="static/assets/js/jquery/jquery.min.js"></script>
+  <script src="http://cdn.bootstrapmb.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

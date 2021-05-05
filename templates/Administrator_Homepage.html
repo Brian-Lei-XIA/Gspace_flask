@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Homepage</title>
+	<meta name="keywords" content="Gspace" />
+	<meta name="description" content="Online Teaching">
+	<meta name="author" content="Gspace team">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Google Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<!-- Bootstrap CSS CDN -->
+	<link rel="stylesheet" href="http://cdn.bootstrapmb.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<!-- Custom CSS Starts -->
+	<link rel="stylesheet" href="static/assets/css/skin/all-skins.css">
+	<link rel="stylesheet" href="static/assets/css/general/style.css">
+	<link rel="stylesheet" href="static/assets/css/sidebar/side-nav.css">
+	<link rel="stylesheet" href="static/assets/css/fonts/fonts-style.css">
+	<link rel="stylesheet" href="static/assets/css/nanoscroller/nanoscroller.css">
+
+	<link rel="stylesheet" href="static/assets/css/tables/datatables.min.css">
+	<link rel="stylesheet" href="static/assets/css/tables/buttons.dataTables.min.css">
+	<!-- Page CSS -->
+	<link rel="stylesheet" href="static/assets/css/dashboard/dashboard2.css">
+	<link rel="stylesheet" href="static/assets/css/flag/flagicon.css">
+	<link rel="stylesheet" href="static/assets/css/maps/jqvmap.css">
+
+	<link rel="stylesheet" href="static/assets/css/skin/all-skins.css">
+	<link rel="stylesheet" href="static/assets/css/general/style.css">
+	<link rel="stylesheet" href="static/assets/css/sidebar/side-nav.css">
+	<link rel="stylesheet" href="static/assets/css/fonts/fonts-style.css">
+	<link rel="stylesheet" href="static/assets/css/nanoscroller/nanoscroller.css">
+</head>
+
+<body class="sidebar-mini fixed skin-purple">
+	<div class="wrapper">
+		<header class="main-header">
+			<!-- Logo -->
+			<a href="{{url_for('admin_homepage', _external=True)}}" class="logo">
+				<!-- logo for regular state and mobile devices -->
+				<span class="logo-lg"><b>Gspace</b></span>
+			</a>
+			<nav class="navbar navbar-static-top">
+				<!-- Sidebar toggle button-->
+				<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+					<span class="sr-only">Toggle navigation</span>
+				</a>
+				<div class="pull-right">
+					<a href="{{url_for('logout', _external=True)}}" class="btn btn-primary btn-sm">Sign out</a>
+					<a>&nbsp;</a>
+				</div>
+			</nav>
+		</header>
+		<!-- Sidebar Section Starts -->
+		<aside class="main-sidebar">
+			<div class="nano">
+				<div class="nano-content">
+					<ul class="sidebar-menu" data-widget="tree">
+						<li class="header">
+							<h5>Welcome to Gspace!</h5>
+						</li>
+						<li>
+							<a href="Administrator_Homepage">
+								<i class="fa fa-dashboard"></i> <span>Home</span>
+							</a>
+
+						</li>
+						<li>
+							<a href="Administrator_Coursespage">
+								<i class="fa fa-leanpub"></i> <span>Course</span>
+							</a>
+						</li>
+						<li class="treeview">
+							<a href="#">
+								<i class="fa fa-navicon"></i>
+								<span>Users</span>
+								<span class="pull-right-container">
+									<i class="fa fa-angle-left pull-right"></i>
+								</span>
+							</a>
+							<ul class="treeview-menu">
+								<li>
+									<a href="Administrator_TeachersEdit">
+										<i class="fa fa-desktop"></i> <span>Teachers Infor</span>
+									</a>
+								</li>
+								<li>
+									<a href="Administrator_StudentsEdit">
+										<i class="fa fa-bar-chart-o"></i> <span>Students Infor</span>
+									</a>
+								</li>
+							</ul>
+						</li>
+
+					</ul>
+				</div>
+			</div>
+		</aside>
+		<!-- Sidebar Section Ends -->
+		<!-- Page Content Starts -->
+		<div class="content-wrapper">
+			<section class="content-header">
+				<div class="alert alert-secondary col-xl-12 col-lg-12 col-sm-12" role="alert">Home</div>
+				<h1>Overview</h1>
+			</section>
+
+			<div class="dashboard2">
+				<div class="row">
+					<div class="col-xl-4 col-lg-6 col-12">
+						<div class="counter-box-2">
+							<div class="text-left">
+								<i class="fa fa-book fa-2x"></i>
+								<div class="mt-2">Total Courses</div>
+								<h3 class="mt-1 mb-0 count">{{ courNum[0][0] }}</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4 col-lg-6 col-12">
+						<div class="counter-box-2">
+							<div class="text-left">
+								<i class="fa fa-bookmark fa-2x"></i>
+								<div class="mt-2">Total Classes</div>
+								<h3 class="mt-1 mb-0 count">{{ classNum[0][0] }}</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4 col-lg-6 col-12">
+						<div class="counter-box-2">
+							<div class="text-left">
+								<i class="fa fa-bookmark-o fa-2x"></i>
+								<div class="mt-2">Total Students</div>
+								<h3 class="mt-1 mb-0 count">{{ studNum[0][0] }}</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4 col-lg-6 col-12">
+						<div class="counter-box-2">
+							<div class="text-left">
+								<i class="fa fa-bookmark-o fa-2x"></i>
+								<div class="mt-2">Total Teachers</div>chers
+								<h3 class="mt-1 mb-0 count">{{ teachNum[0][0] }}</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="cardbg col-12">
+				<h6 class="title-inner text-uppercase">Courses</h6>
+				<div class="table-responsive">
+					<table class="table m-0 table-striped" data-pagination="true" data-side-pagination="client"
+						data-page-size="3">
+						<thead>
+							<tr>
+								<th>Course name</th>
+								<th>Start time</th>
+								<th>End time</th>
+								<th>Teachers Number</th>
+								<th>Students Number</th>
+								<th>Classes Number</th>
+							</tr>
+						</thead>
+						<tbody>
+							{%for item in message1%}
+							<tr>
+								<td>{{item[0]}}</td>
+								<td>{{item[1].strftime('%Y-%m-%d')}}</td>
+								<td>{{item[2].strftime('%Y-%m-%d')}}</td>
+								<td>{{item[3]}}</td>
+								<td>{{item[4]}}</td>
+								<td>{{item[5]}}</td>
+							</tr>
+							{%endfor%}
+						</tbody>
+					</table>
+				</div>
+				<!-- /.table -->
+				<a href="Administrator_Coursespage" class="btn btn-info btn-sm">More</a>
+			</div>
+			<!-- /.Course -->
+
+			<div class="cardbg col-12">
+				<h6 class="title-inner text-uppercase">Teachers</h6>
+				<div class="table-responsive">
+					<table class="table m-0 table-striped" data-pagination="true" data-side-pagination="client"
+						data-page-size="3">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Gender</th>
+								<th>Age</th>
+								<th>Level</th>
+								<th>Telephone</th>
+								<th>Email</th>
+							</tr>
+						</thead>
+						<tbody>
+							{%for item in message3%}
+							<tr>
+								<td>{{item[0]}}</td>
+								<td>{{item[1]}}</td>
+								<td>{{item[2]}}</td>
+								<td>{{item[3]}}</td>
+								<td>{{item[4]}}</td>
+								<td>{{item[5]}}</td>
+							</tr>
+							{%endfor%}
+						</tbody>
+						<!--Table Need Break-->
+					</table>
+				</div>
+				<!-- /.Teachers -->
+				<a href="Administrator_TeachersEdit" class="btn btn-info btn-sm">More</a>
+			</div>
+			<!-- /.TEACHER TABLE -->
+
+			<div class="cardbg col-12">
+				<h6 class="title-inner text-uppercase">Students</h6>
+				<div class="table-responsive">
+					<table class="table m-0 table-striped" data-pagination="true" data-side-pagination="client"
+						data-page-size="3">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Gender</th>
+								<th>Age</th>
+								<th>Level</th>
+								<th>Telephone</th>
+								<th>Email</th>
+							</tr>
+						</thead>
+						<tbody>
+							{%for item in message4%}
+							<tr>
+								<td>{{item[0]}}</td>
+								<td>{{item[1]}}</td>
+								<td>{{item[2]}}</td>
+								<td>{{item[3]}}</td>
+								<td>{{item[4]}}</td>
+								<td>{{item[5]}}</td>
+							</tr>
+							{%endfor%}
+						</tbody>
+						<!--Table Need Break-->
+					</table>
+				</div>
+				<!-- /.Teachers -->
+				<a href="Administrator_StudentsEdit" class="btn btn-info btn-sm">More</a>
+			</div>
+			<!-- /.Students TABLE -->
+
+
+		</div>
+		<!-- Page Content Ends -->
+
+		<!-- Back to Top Starts -->
+		<a href="javascript:" id="return-to-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+		<!-- Back to Top Ends -->
+		<!-- Footer Section Starts -->
+		<footer class="main-footer">
+			<div class="pull-right hidden-xs">
+				Version 1.0.0
+			</div>
+			<p class="mb-0">Online learning system © 2020 Gspace.Team all rights
+				reserved.</p>
+		</footer>
+		<!-- Footer Section Ends -->
+
+	</div>
+
+	<!-- jQuery CDN - Slim version (=without AJAX) -->
+	<script src="static/assets/js/jquery/slim.min.js"></script>
+	<!-- Popper.JS -->
+	<script src="static/assets/js/jquery/popper.min.js"></script>
+	<!-- Bootstrap JS -->
+	<script src="http://cdn.bootstrapmb.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<script src="static/assets/js/jquery/jquery.min.js"></script>
+	<!-- Page JS -->
+	<script src="static/assets/js/maps/jvector/jquery.vmap.min.js"></script>
+	<script src="static/assets/js/maps/jvector/jquery.vmap.world.js"></script>
+	<script src="static/assets/js/maps/jvector/jquery.vmap.sampledata.js"></script>
+	<script src="static/assets/js/charts/Chart.bundle.min.js"></script>
+	<script src="static/assets/js/charts/utils.js"></script>
+	<script src="static/assets/js/dashboard/dashboard2.js"></script>
+
+	<script src="static/assets/js/tables/dataTables.buttons.min.js"></script>
+	<script src="static/assets/js/tables/datatables.min.js"></script>
+	<script src="static/assets/js/tables/dataTables.buttons.min.js"></script>
+	<script src="static/assets/js/tables/jszip.min.js"></script>
+	<script src="static/assets/js/tables/pdfmake.min.js"></script>
+	<script src="static/assets/js/tables/vfs_fonts.js"></script>
+	<script src="static/assets/js/tables/buttons.html5.min.js"></script>
+	<script src="static/assets/js/tables/buttons.print.min.js"></script>
+	<script src="static/assets/js/tables/datatable.js"></script>
+	<!-- Theme JS -->
+	<script src="static/assets/js/nanoscroller/nanoscroller.js"></script>
+	<script src="static/assets/js/custom/theme.js"></script>
+</body>
+
+</html>

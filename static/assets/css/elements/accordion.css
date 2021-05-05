@@ -1,0 +1,67 @@
+.accstyle1 .card-header {
+	background: #22a336;
+	color: #fff;
+}
+.accstyle2 .card-header {
+	background: #F58020;
+	color: #fff;
+}
+.accstyle3 .card-header {
+	background: #757643;
+	color: #fff;
+}
+.accstyle3 .card-body {
+	border: 1px solid #757643;
+}
+.accstyle1 .card-body {
+	border: 1px solid #076a17;
+}
+.card-header,.card-header:first-child {
+	cursor: pointer;
+	border-radius: 0;
+	margin:5px 0 0;
+	transition:.3s;
+}
+.card-header:hover, .accordion .card-header:hover {
+	background:#333333;
+}
+.accordion .card-header {
+	background: #2B66A1;
+	color: #fff;
+	border-top:medium none;
+}
+.accordion .card-header:after {
+    font-family: 'FontAwesome';  
+    content: "\f068";
+    float: right; 
+}
+.accordion .card-body {
+	border: 1px solid #2B66A1;
+}
+.accordion .card-header.collapsed:after {
+    content: "\f067"; 
+}
+.accstyle2 .card-body {
+	border: 1px solid #F58020;
+}
+.accordion .card-body, .accstyle1 .card-body, .accstyle2 .card-body, .accstyle3 .card-body {
+	border-top:medium none;
+}
+.accstyle2 .card-header:after {
+    font-family: 'FontAwesome';  
+    content: "\f078";
+    float: right; 
+}
+.accstyle2 .card-header.collapsed:after {
+    content: "\f054"; 
+}
+.accstyle4 .card-header {
+	background: none;
+	border: 1px solid #eee;
+}
+.accstyle4 .card-body {
+	border: 1px solid #dedede;
+}
+.accstyle5 .card-header {
+	background:none;
+}

@@ -1,0 +1,7 @@
+html,body {margin: auto;height:100%;display:table;}
+body {background:#2981E6;display:table-cell;vertical-align:middle;color:#FFF;}
+h1 {font-size:8.5rem;font-weight:bold;}
+.search-form {margin: 0 0 1.5rem;}
+.search-form .input-group {width: 50%;margin: 0 auto;}
+.search-form .form-control {border-radius: 0;}
+.headline {text-shadow:6px 3px #4b2727;}

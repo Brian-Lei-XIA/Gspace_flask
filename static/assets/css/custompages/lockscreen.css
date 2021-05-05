@@ -1,0 +1,38 @@
+html,body {
+	margin: auto;
+	height:100%;
+	display:table;
+}
+body {
+	background:#2981E6;
+	display:table-cell;
+	vertical-align:middle;
+}
+.mx-auto.lockscreen {
+	width: 320px;
+}
+.img-circle {
+	display: table;
+	margin: 0 auto;
+}
+.mx-auto.lockscreen .card.card-lockscreen {
+	border-radius: 0.5rem;
+}
+.form-label-group {
+	margin: 0 0 1rem;
+}
+.form-label-group > input {
+	border-radius: 0.5rem;
+}
+.form-lockscreen .btn {
+	font-size: 90%;
+	border-radius: 5rem;
+	letter-spacing: .1rem;
+	font-weight: bold;
+	padding: 0.7rem 1.7rem;
+	transition: all 0.2s;
+	text-align: left;
+}
+a:hover {
+	text-decoration:none;
+}

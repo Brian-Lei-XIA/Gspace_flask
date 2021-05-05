@@ -1,0 +1,54 @@
+html,body {
+	margin: auto;
+	height:100%;
+	display:table;
+}
+body {
+	background:#F7F7F7;
+	display:table-cell;
+	vertical-align:middle;
+}
+.mx-auto.login {
+	width: 320px;
+}
+.login_content {
+	text-align: center;
+	text-shadow: 0 1px 0 #fff;
+}
+.login_content form {
+	margin: 20px 0;
+	position: relative;
+}
+.login_content form > h1 {
+	letter-spacing: -.05em;
+	line-height: 20px;
+	margin: 0 0 2rem;
+	font-size:25px;
+}
+h1 {
+	font-size:25px;
+}
+.login_content form > h1::after, .login_content form > h1::before {
+	content: "";
+	height: 1px;
+	position: absolute;
+	top: 10px;
+	width: 20%;
+	background: #7e7e7e;
+}
+.login_content h1::before {
+	left: 0;
+}
+.login_content h1::after {
+	right: 0;
+}
+a:hover {
+	text-decoration:none;
+}
+.form-control:focus {
+	box-shadow:none;
+	outline:none;
+}
+.separator h1 {
+	margin: 0 0 0.5rem;
+}

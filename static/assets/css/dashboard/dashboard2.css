@@ -1,0 +1,21 @@
+.counter-box-2 > div {color: #333;border: 0;box-shadow: 0px 1px 2px #aaa;position: relative;overflow: hidden;z-index: 1;cursor:pointer;-webkit-box-shadow: 0px 1px 2px #aaa;border-top: 1px solid #EAEAEA;}
+.counter-box-2 > div:after, .counter-box-2 > div:before {content: '';position: absolute;left: 0;right: 0;height: 0;-webkit-transition: background .4s,height .4s;transition: background .4s,height .4s;z-index: -1;}
+.counter-box-2 > div:before {top: 0;}
+.counter-box-2 > div:after {bottom: 0;}
+.counter-box-2 > div:hover, .counter-box-2 > div:hover .text1{-webkit-text-fill-color: #fff;background:#fff;box-shadow: none;}
+
+.flags .badge {float: right;margin: 0.3rem 0 0;}
+.flags.list-group-flush .list-group-item:hover{background:#eee;cursor:pointer;}
+.flags.list-group-flush .list-group-item:last-child{border-bottom:1px solid rgba(0, 0, 0, .125);}
+.counter-box-2.fb-box > div:after, .counter-box-2.fb-box > div:before,
+.counter-box-2.fb-box > div:hover:after, .counter-box-2.fb-box > div:hover:before
+{background-image: linear-gradient(-90deg, #2551AD, #658CDB);} 
+.counter-box-2.tw-box > div:after, .counter-box-2.tw-box > div:before,
+.counter-box-2.tw-box > div:hover:after, .counter-box-2.tw-box > div:hover:before
+{background-image: linear-gradient(-90deg, #0086C3, #658CDB);}
+.counter-box-2.in-box > div:after, .counter-box-2.in-box > div:before,
+.counter-box-2.in-box > div:hover:after, .counter-box-2.in-box > div:hover:before 
+{background-image: linear-gradient(-90deg, #D71EA6, #F9B122);}
+.counter-box-2.yt-box > div:after, .counter-box-2.yt-box > div:before,
+.counter-box-2.yt-box > div:hover:after, .counter-box-2.yt-box > div:hover:before
+{background-image: linear-gradient(-90deg, #da3123, #83241c);}

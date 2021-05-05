@@ -1,0 +1,61 @@
+.modals button, .modals a {
+	margin: 2px;
+}
+.modals .modal-content, .modals .modal-header {
+	border-radius:0;
+}
+.modals .modal-primary .modal-header, .modals .modal-primary .modal-footer {
+	background:#007bff;
+	color:#FFF;
+	border:none;	
+}
+.modal-primary .modal-body {
+	background: #0069d9;
+}
+.modal-primary .modal-body p {
+	color:#FFF;
+}
+.modals .modal-info .modal-header, .modals .modal-info .modal-footer {
+	background:#17a2b8;
+	color:#FFF;
+	border:none;	
+}
+.modal-info .modal-body {
+	background: #2c869c;
+}
+.modal-info .modal-body p {
+	color:#FFF;
+}
+.modals .modal-danger .modal-header, .modals .modal-danger .modal-footer {
+	background:#dc3545;
+	color:#FFF;
+	border:none;	
+}
+.modal-danger .modal-body {
+	background: #c82333;
+}
+.modal-danger .modal-body p {
+	color:#FFF;
+}
+.modals .modal-warning .modal-header, .modals .modal-warning .modal-footer {
+	background:#ffc107;
+	color:#FFF;
+	border:none;	
+}
+.modal-warning .modal-body {
+	background: #e0a800;
+}
+.modal-warning .modal-body p {
+	color:#FFF;
+}
+.modals .modal-success .modal-header, .modals .modal-success .modal-footer {
+	background:#28a745;
+	color:#FFF;
+	border:none;	
+}
+.modal-success .modal-body {
+	background: #218838;
+}
+.modal-success .modal-body p {
+	color:#FFF;
+}

@@ -1,0 +1,24 @@
+.readmail .cardbg > .title-inner {margin: -1rem -2rem 0rem;border-bottom: 1px solid #DDD;padding: 0 1.5rem 1rem;}
+.nav-item {border-bottom: 1px solid #dedede;}
+.readmail .box-body.no-padding {margin: 0 -2rem;}
+.badge-primary, .badge-warning {padding: 0 0.3rem;}
+.mailbox-controls {padding: 0.5rem;margin: 0 -2rem 1rem;border-bottom: 1px solid #dedede;}
+.readmail .cardbg > .heading {margin: -1rem -2rem 0rem;border-bottom: 1px solid #DDD;padding: 0 1.5rem 1rem;}
+.readmail .cardbg > .heading .title-inner {display:inline;}
+.box-footer.no-padding {margin: 0 -1rem;}
+.box-footer.no-padding .mailbox-controls{padding:0;}
+.table td, .table th {padding: 0.75rem 1.25rem;}
+.btn-sm.checkbox-toggle {width: 30px;height: 32px;}
+.mailbox-attachments {list-style: none;margin: 0;padding: 0;}
+.mailbox-attachments li {float: left;width: 200px;border: 1px solid #eee;margin-bottom: 10px;margin-right: 10px;}
+.mailbox-attachment-icon {float:none;display:table;margin:0 auto;font-size:65px;color:#666;padding:1.1rem;}
+.mailbox-attachment-info {padding: 10px;background: #f4f4f4;}
+.mailbox-attachment-icon.has-img > img {max-width: 100%;height: auto;}
+.mailbox-attachment-icon.has-img {padding: 0;}
+.btn-box-tool {padding: 5px;font-size:0.75rem;background: transparent;color: #97a0b3;}
+.mailbox-read-info h3 {font-size: 20px;margin: 0;}
+.mailbox-read-info h5 {margin: 0;padding: 5px 0 0 0;font-size:14px;}
+.mailbox-read-info {border-bottom: 1px solid #dedede;margin: 0 -2rem;padding: 1rem 1.5rem;}
+.mailbox-attachment-name {font-size: 0.9rem;}
+.mailbox-attachment-size {color: #999;font-size:0.75rem;display:block;}
+.mailbox-attachment-size .btn-default {padding: 0.1rem 0.3rem;}

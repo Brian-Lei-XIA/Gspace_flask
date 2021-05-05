@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Grade Edit</title>
+  <meta name="keywords" content="Gspace" />
+  <meta name="description" content="Online Teaching">
+  <meta name="author" content="Gspace team">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="http://cdn.bootstrapmb.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <!-- Custom CSS Starts -->
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/skin/all-skins.css', _external=True)}}">
+
+  <link rel="stylesheet" href="  {{url_for('static', filename='assets/css/general/style.css', _external=True)}}">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/sidebar/side-nav.css', _external=True)}}">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/fonts/fonts-style.css', _external=True)}}">
+
+  <link rel="stylesheet"
+    href="{{url_for('static', filename='assets/css/nanoscroller/nanoscroller.css', _external=True)}}">
+
+  <!-- Page CSS -->
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/dashboard/dashboard2.css', _external=True)}}">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/flag/flagicon.css', _external=True)}}">
+
+  <link rel="stylesheet" href="{{url_for('static', filename='assets/css/maps/jqvmap.css', _external=True)}}">
+
+</head>
+
+<body class="sidebar-mini fixed skin-purple">
+  <div class="wrapper">
+    <!-- Header Section Starts -->
+    <header class="main-header">
+      <!-- Logo -->
+      <a href="/Teacher_Homepage" class="logo">
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Gspace</b></span>
+      </a>
+      <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="/#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+        <div class="pull-right">
+          <a href="/logout" class="btn btn-primary btn-flat">Sign out</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Sidebar Section Starts -->
+    <aside class="main-sidebar">
+      <div class="nano">
+        <div class="nano-content">
+          <ul class="sidebar-menu" data-widget="tree">
+            <li class="header">
+              <h5>Welcome to Gspace!</h5>
+            </li>
+            <li>
+              <a href="/Teacher_Homepage">
+                <i class="fa fa-dashboard"></i> <span>Home</span>
+              </a>
+
+            </li>
+            <li>
+              <a href="/Teacher_Coursepage">
+                <i class="fa fa-leanpub"></i> <span>Course</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+    <!-- Sidebar Section Ends -->
+
+    <!-- Page Content Starts -->
+    <div class="content-wrapper">
+      <section class="content-header">
+        <div class="alert alert-secondary col-xl-12 col-lg-12 col-sm-12" role="alert">
+          <p class="mb-0"><a href="/Teacher_Homepage">Home</a> / <a href="/Teacher_Coursepage">Course</a> / <a
+              href="/Teacher_Classpage/{{classID}}"> {{className}}</a> /
+            Grade</p>
+        </div>
+      </section>
+      <section>
+        <h1>{{stuName[0][0]}}</h1>
+        {{test}}
+      </section>
+      <section class="content">
+        <div class="cardbg col-12">
+          <h6 class="title-inner text-uppercase">Grade</h6>
+          <form accept-charset="UTF-8" class="form-control-hori" role="form" action="{{lectureID}}" method="post">
+            <div class="table-responsive">
+              <table class="table table-striped text-center">
+                <thead>
+                  <tr>
+                    <th>Assignment Name</th>
+                    <th>Status</th>
+                    <th>Grade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%for item in grade%}
+                  <tr>
+                    <td>{{item[0]}}</td>
+                    <td>
+                      {%if item[1] == 0%}
+                      Not Publish
+                      {%endif%}
+                      {%if item[1] == 1%}
+                      Submitted
+                      {%endif%}
+                      {%if item[1] == 2%}
+                      Not Submit
+                      {%endif%}
+                    </td>
+                    <td>
+                      <input type="number" class="form-control" min="0" max="100" step="1" name="grade"
+                        value="{{item[2]}}">
+                    </td>
+                  </tr>
+                  {%endfor%}
+                </tbody>
+              </table>
+            </div>
+            <!-- /.table -->
+            <div class="offset-sm-2 col-sm-10">
+              <input class="btn btn-success pull-right" type="submit" value="Save">
+              <a href="/Teacher_Classpage/{{classID}}/grade/{{sid}}" class="btn btn-danger pull-right">Cancel</a>
+            </div>
+          </form>
+
+        </div>
+        <!-- /.box -->
+      </section>
+    </div>
+    <!-- Page Content Ends -->
+
+    <!-- Back to Top Starts -->
+    <a href="javascript:" id="return-to-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+    <!-- Back to Top Ends -->
+    <!-- Footer Section Starts -->
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        Version 1.0.0
+      </div>
+      <p class="mb-0">Online learning system © 2020 Gspace.Team all rights
+        reserved.</p>
+    </footer>
+    <!-- Footer Section Ends -->
+
+  </div>
+
+  <!-- jQuery CDN - Slim version (=without AJAX) -->
+  <script src="{{url_for('static', filename='assets/js/jquery/slim.min.js', _external=True)}}"></script>
+  <!-- Popper.JS -->
+  <script src="{{url_for('static', filename='assets/js/jquery/popper.min.js', _external=True)}}"></script>
+  <!-- Bootstrap JS -->
+  <script src="http://cdn.bootstrapmb.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="{{url_for('static', filename='assets/js/jquery/jquery.min.js', _external=True)}}"></script>
+  <!-- Page JS -->
+  <script src="{{url_for('static', filename='assets/js/maps/jvector/jquery.vmap.min.js', _external=True)}}"></script>
+  <script src="{{url_for('static', filename='assets/js/maps/jvector/jquery.vmap.world.js', _external=True)}}"></script>
+  <script
+    src="{{url_for('static', filename='assets/js/maps/jvector/jquery.vmap.sampledata.js', _external=True)}}"></script>
+  <script src="{{url_for('static', filename='assets/js/charts/Chart.bundle.min.js', _external=True)}}"></script>
+  <script src="{{url_for('static', filename='assets/js/charts/utils.js', _external=True)}}"></script>
+  <script src="{{url_for('static', filename='assets/js/dashboard/dashboard2.js', _external=True)}}"></script>
+  <!-- Theme JS -->
+  <script src="{{url_for('static', filename='assets/js/nanoscroller/nanoscroller.js', _external=True)}}"></script>
+  <script src="{{url_for('static', filename='assets/js/custom/theme.js', _external=True)}}"></script>
+</body>
+
+</html>

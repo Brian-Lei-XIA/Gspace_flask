@@ -1,0 +1,9 @@
+.compose .cardbg > .title-inner {margin: -1rem -2rem 0rem;border-bottom: 1px solid #DDD;padding: 0 1.5rem 1rem;}
+.nav-item {border-bottom: 1px solid #dedede;}
+.compose .box-body.no-padding {margin: 0 -2rem;}
+.badge-primary, .badge-warning {padding: 0 0.3rem;}
+.compose .cardbg > .heading {margin: -1rem -2rem 0rem;border-bottom: 1px solid #DDD;padding: 0 1.5rem 1rem;}
+.compose .cardbg > .heading .title-inner {display:inline;}
+.btn.btn-file {position: relative;overflow: hidden;}
+.btn.btn-file > input[type="file"] {position: absolute;top: 0;right: 0;min-width: 100%;min-height: 100%;font-size: 100px;text-align: right;opacity: 0;filter: alpha(opacity=0);outline: none;background: #FFF;cursor: inherit;display: block;}
+.form-control {border-radius: 0;}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Class Page</title>
+	<meta name="keywords" content="Gspace" />
+	<meta name="description" content="Online Teaching">
+	<meta name="author" content="Gspace team">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Google Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+	<!-- Bootstrap CSS CDN -->
+	<link rel="stylesheet" href="http://cdn.bootstrapmb.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	 <!-- Custom CSS Starts -->
+	 <link rel="stylesheet" href="{{url_for('static', filename='assets/css/skin/all-skins.css', _external=True)}}">
+	 <link rel="stylesheet" href="{{url_for('static', filename='assets/css/general/style.css', _external=True)}}">
+	 <link rel="stylesheet" href="{{url_for('static', filename='assets/css/sidebar/side-nav.css', _external=True)}}">
+	 <link rel="stylesheet" href="{{url_for('static', filename='assets/css/fonts/fonts-style.css', _external=True)}}">
+	 <link rel="stylesheet" href="{{url_for('static', filename='assets/css/nanoscroller/nanoscroller.css', _external=True)}}">
+ 
+	 <link rel="stylesheet" href="{{url_for('static', filename='assets/css/tables/datatables.min.css', _external=True)}}">
+	 <link rel="stylesheet" href="{{url_for('static', filename='assets/css/tables/buttons.dataTables.min.css', _external=True)}}">
+ 
+	 <!-- Page CSS -->
+	 <link rel="stylesheet" href="{{url_for('static', filename='assets/css/dashboard/dashboard2.css', _external=True)}}">
+	 <link rel="stylesheet" href="{{url_for('static', filename='assets/css/flag/flagicon.css', _external=True)}}">
+	 <link rel="stylesheet" href="{{url_for('static', filename='assets/css/maps/jqvmap.css', _external=True)}}">
+ 
+	 <link rel="stylesheet" href="{{url_for('static', filename='assets/css/skin/all-skins.css', _external=True)}}">
+	 <link rel="stylesheet" href="{{url_for('static', filename='assets/css/general/style.css', _external=True)}}">
+	 <link rel="stylesheet" href="{{url_for('static', filename='assets/css/sidebar/side-nav.css', _external=True)}}">
+	 <link rel="stylesheet" href="{{url_for('static', filename='assets/css/fonts/fonts-style.css', _external=True)}}">
+	 <link rel="stylesheet" href="{{url_for('static', filename='assets/css/nanoscroller/nanoscroller.css', _external=True)}}">
+</head>
+
+<body class="sidebar-mini fixed skin-purple">
+  <div class="wrapper">
+    <!-- Header Section Starts -->
+		<header class="main-header">
+      <!-- Logo -->
+      <a href="{{url_for('admin_homepage', _external=True)}}" class="logo">
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>Gspace</b></span>
+      </a>
+      <nav class="navbar navbar-static-top">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+          <span class="sr-only">Toggle navigation</span>
+        </a>
+		<div class="pull-right">
+			<a href="{{url_for('logout', _external=True)}}" class="btn btn-primary btn-sm">Sign out</a>
+			<a>&nbsp;</a>
+		</div>
+      </nav>
+    </header>
+
+   <!-- Sidebar Section Starts -->
+	 <aside class="main-sidebar">
+		<div class="nano">
+			<div class="nano-content">
+				<ul class="sidebar-menu" data-widget="tree">
+					<li class="header">
+						<h5>Welcome to Gspace!</h5>
+					</li>
+					<li>
+						<a href="{{url_for('admin_homepage', _external=True)}}">
+							<i class="fa fa-dashboard"></i> <span>Home</span>
+						</a>
+
+					</li>
+					<li>
+						<a href="{{url_for('admin_coursespage', _external=True)}}">
+							<i class="fa fa-leanpub"></i> <span>Course</span>
+						</a>
+					</li>
+					<li class="treeview">
+						<a href="#">
+							<i class="fa fa-navicon"></i>
+							<span>Users</span>
+							<span class="pull-right-container">
+								<i class="fa fa-angle-left pull-right"></i>
+							</span>
+						</a>
+						<ul class="treeview-menu">
+							<li>
+								<a href="{{url_for('admin_teachersEdit', _external=True)}}">
+									<i class="fa fa-desktop"></i> <span>Teachers Infor</span>
+								</a>
+							</li>
+							<li class="active">
+								<a href="{{url_for('admin_studentsEdit', _external=True)}}">
+									<i class="fa fa-bar-chart-o"></i> <span>Students Infor</span>
+								</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</aside>
+	<!-- Sidebar Section Ends -->
+
+   <!-- Page Content Starts -->
+		<div class="content-wrapper">
+			<section class="content-header">
+				<div class="alert alert-secondary col-xl-12 col-lg-12 col-sm-12" role="alert">
+					<p class="mb-0"><a href="{{url_for('admin_homepage', _external=True)}}">Home</a> / <a
+							href="{{url_for('admin_coursespage', _external=True)}}">Course</a> / Class</p>
+				</div>
+			</section>
+			<section class="content">
+				<h1>{{ classname }}</h1>
+				<input type="hidden" class="form-control" name="className" value="{{classname}}">
+			</section>
+			<section class="content">
+				<!--teacher-->
+        <div class="cardbg col-12">
+					<h6 class="title-inner text-uppercase">Teachers</h6>
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered dt-responsive nowrap" style="text-align:center">
+							<thead>
+								<tr>
+									<th>tID</th>
+									<th>Name</th>
+									<th>Gender</th>
+									<th>Age</th>
+									<th>tLevel</th>
+									<th>Telephone</th>
+									<th>Email</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								{%for item in teacher%}
+								<tr>
+									<td>{{item[0]}}</td>
+									<td>{{item[1]}}</td>
+									<td>{{item[2]}}</td>
+									<td>{{item[3]}}</td>
+									<td>{{item[4]}}</td>
+									<td>{{item[5]}}</td>
+									<td>{{item[6]}}</td>
+									<td>
+										<a href ="{{ url_for('admin_edit_classTeacher', className=classname, id=item[0]) }}" class="btn btn-primary btn-sm">Edit</a>
+                      					<a href ="{{ url_for('admin_delete_classTeacher', className=classname ,id=item[0]) }}"  class="btn btn-danger btn-sm" onclick="{if(confirm('The {{item[1]}} will be deleted. Are you sure?')){this.document.formname.submit();return true;}return false;}">Delete</a>
+									</td>
+								</tr>
+								{%endfor%}
+							</tbody>
+						</table>
+						<div>
+							{% with message = get_flashed_messages() %}
+							{% if message %}
+							<ul>
+								<li><strong>{{ message[0] }}</strong></li>
+								<li><strong>{{ message[1] }}</strong></li>
+								<li><strong>{{ message[2] }}</strong></li>
+							</ul>
+							{% endif %}
+							{% endwith %}
+						</div>
+
+					</div>
+					<!-- /.table -->
+					<a class="btn btn-primary" href="{{url_for('administrator_classe_Java1001Add', className=classname)}}" role="button">Add</a>
+				</div>
+				<!-- /.box -->
+
+
+				<!--Students-->
+				<div class="cardbg col-12">
+					<h6 class="title-inner text-uppercase">Students</h6>
+					<div class="table-responsive">
+						<table class="table table-striped table-bordered dt-responsive nowrap" style="text-align:center">
+							<thead>
+								<tr>
+									<th>sID</th>
+									<th>Name</th>
+									<th>Gender</th>
+									<th>Age</th>
+									<th>sLevel</th>
+									<th>Telephone</th>
+									<th>Email</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								{%for item in student%}
+								<tr>
+									<td>{{item[0]}}</td>
+									<td>{{item[1]}}</td>
+									<td>{{item[2]}}</td>
+									<td>{{item[3]}}</td>
+									<td>{{item[4]}}</td>
+									<td>{{item[5]}}</td>
+									<td>{{item[6]}}</td>
+									<td>
+										<a href ="{{ url_for('admin_edit_classStudent', className=classname, id=item[0]) }}" class="btn btn-primary btn-sm">Edit</a>
+                      					<a href ="{{ url_for('admin_delete_classStudent', className=classname ,id=item[0]) }}"  class="btn btn-danger btn-sm" onclick="{if(confirm('The {{item[1]}} will be deleted. Are you sure?')){this.document.formname.submit();return true;}return false;}">Delete</a>
+									</td>
+								</tr>
+								{%endfor%}
+							</tbody>
+						</table>
+					</div>
+					<!-- /.table -->
+					<a class="btn btn-primary" href="{{url_for('administrator_classe_Java1001Add', className=classname)}}" role="button">Add</a>
+				</div>
+        <!-- /.box -->
+			</section>
+		</div>
+		<!-- Page Content Ends -->
+
+
+
+
+
+
+
+    <!-- Back to Top Starts -->
+    <a href="javascript:" id="return-to-top"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+    <!-- Back to Top Ends -->
+    <!-- Footer Section Starts -->
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        Version 1.0.0
+      </div>
+      <p class="mb-0">Online learning system © 2020 space.Team all rights
+        reserved.</p>
+    </footer>
+    <!-- Footer Section Ends -->
+
+  </div>
+
+	<!-- jQuery CDN - Slim version (=without AJAX) -->
+	<script src="{{url_for('static', filename='assets/js/jquery/slim.min.js', _external=True)}}"></script>
+	<!-- Popper.JS -->
+	<script src="{{url_for('static', filename='assets/js/jquery/popper.min.js', _external=True)}}"></script>
+	<!-- Bootstrap JS -->
+	<script src="http://cdn.bootstrapmb.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+	<script src="{{url_for('static', filename='assets/js/jquery/jquery.min.js', _external=True)}}"></script>
+	<!-- Page JS -->
+	<script src="{{url_for('static', filename='assets/js/maps/jvector/jquery.vmap.min.js', _external=True)}}"></script>
+	<script src="{{url_for('static', filename='assets/js/maps/jvector/jquery.vmap.world.js', _external=True)}}"></script>
+	<script src="{{url_for('static', filename='assets/js/maps/jvector/jquery.vmap.sampledata.js', _external=True)}}"></script>
+	<script src="{{url_for('static', filename='assets/js/charts/Chart.bundle.min.js', _external=True)}}"></script>
+	<script src="{{url_for('static', filename='assets/js/charts/utils.js', _external=True)}}"></script>
+  <script src="{{url_for('static', filename='assets/js/dashboard/dashboard2.js', _external=True)}}"></script>
+
+	<!-- Theme JS -->
+	<script src="{{url_for('static', filename='assets/js/nanoscroller/nanoscroller.js', _external=True)}}"></script>
+	<script src="{{url_for('static', filename='assets/js/custom/theme.js', _external=True)}}"></script>
+</body>
+
+</html>
